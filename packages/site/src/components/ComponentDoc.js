@@ -22,14 +22,17 @@ import Link from './Link';
 import styleReset from './styleReset';
 import PropTable from './PropTable';
 
-type Example = {
-  description?: string,
+type Example = {|
+  backgroundColor?: string,
+  className?: string,
+  description?: MnrlReactNode,
+  hideSource?: boolean,
   scope: Object,
   source: string,
-  title: string
-};
+  title?: string
+|};
 
-type Props = {
+type Props = {|
   behavior: MnrlReactNode,
   className?: string,
   design: MnrlReactNode,
@@ -37,7 +40,7 @@ type Props = {
   examples?: Array<Example>,
   slug: string,
   title: string
-};
+|};
 
 const styles = {
   componentDoc: (props, theme) => ({
