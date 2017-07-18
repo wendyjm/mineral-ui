@@ -55,7 +55,7 @@ const MyLivePreview = createStyledComponent(LivePreview, styles.livePreview, {
 });
 const MyLiveEditor = createStyledComponent(LiveEditor, styles.liveEditor);
 
-type Props = {
+type Props = {|
   backgroundColor?: string,
   className?: string,
   description?: MnrlReactNode,
@@ -63,7 +63,7 @@ type Props = {
   scope: Object,
   source: string,
   title?: string
-};
+|};
 
 export default class ComponentDocExample extends Component {
   props: Props;

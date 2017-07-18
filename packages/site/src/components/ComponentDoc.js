@@ -24,7 +24,6 @@ import PropTable from './PropTable';
 
 type Example = {
   description?: string,
-  propValues?: Object,
   scope: Object,
   source: string,
   title: string
@@ -172,7 +171,6 @@ function renderExamples(
         return (
           <ComponentDocExample
             key={`${slug}:${idx}`}
-            propDoc={propDoc}
             {...example}
           />
         );
