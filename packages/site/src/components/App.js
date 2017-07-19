@@ -28,9 +28,29 @@ import _Nav from './Nav';
 import siteTheme from './siteTheme';
 import styleReset from './styleReset';
 
+type Example = {|
+  backgroundColor?: string,
+  className?: string,
+  description?: MnrlReactNode,
+  hideSource?: boolean,
+  scope: Object,
+  source: string,
+  title?: string
+|};
+
+type Demo = {|
+  behavior: MnrlReactNode,
+  className?: string,
+  design: MnrlReactNode,
+  doc: Object,
+  examples?: Array<Example>,
+  slug: string,
+  title: string
+|};
+
 type Props = {|
   className?: string,
-  demos: Object | Array<Object>
+  demos: Demo | Array<Demo>
 |};
 
 const styles = {
