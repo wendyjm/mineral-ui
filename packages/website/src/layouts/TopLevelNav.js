@@ -1,18 +1,21 @@
 import React from 'react';
-import Link from 'gatsby-link';
+import _Link from 'gatsby-link';
+import {createStyledComponent} from '@mineral-ui/component-utils'
 
 export default function TopLevelNav ({pages}) {
 
-  const style = {textDecoration: 'none', marginRight: '1rem'}
+  const Link = createStyledComponent(_Link, (props, theme) => ({
+    marginRight: theme.spacing_single
+  }))
 
   return (
     <div>
-      <Link style={style} to="/getting-started/">Getting Started</Link>
-      <Link style={style} to="/guidelines/">Guidelines</Link>
-      <Link style={style} to="/components/">Components</Link>
-      <Link style={style} to="/theming">Theming</Link>
-      <Link style={style} to="/whats-new/">What's New</Link>
-      <Link style={style} to="/resources/">Resources</Link>
+      <Link to="/getting-started/">Getting Started</Link>
+      <Link to="/guidelines/">Guidelines</Link>
+      <Link to="/components/">Components</Link>
+      <Link to="/theming">Theming</Link>
+      <Link to="/whats-new/">What's New</Link>
+      <Link to="/resources/">Resources</Link>
     </div>
   )
 }

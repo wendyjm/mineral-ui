@@ -3,11 +3,21 @@ import PropTypes from "prop-types"
 import Link from "gatsby-link"
 import Helmet from "react-helmet"
 import get from 'lodash/get'
+import {createStyledComponent} from '@mineral-ui/component-utils'
 
 import TopLevelNav from './TopLevelNav'
 import SubNav from  './SubNav'
 
 require('prismjs/themes/prism-okaidia.css')
+require('./global.css')
+
+const LayoutContainer = createStyledComponent('div', (props, theme) => ({
+  boxSizing: 'border-box',
+  '& *,& *::before,& *::after': {
+    boxSizing: 'inherit'
+  },
+  fontFamily: `${theme.fontFamily}, ${theme.fontFamily_system}`,
+}))
 
 export default class Template extends React.Component {
   static propTypes = {
@@ -24,14 +34,16 @@ export default class Template extends React.Component {
     // https://github.com/gatsbyjs/gatsby/pull/1503
 
     return (
-      <div>
+      <LayoutContainer>
         <Helmet
           title="Mineral UI"
           meta={[
             { name: "description", content: "A Component Library Built in React at the folks at CA Technologies" },
             { name: "keywords", content: "react, component, library, ui, javascript" },
           ]}
-        />
+        >
+          <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet" />
+        </Helmet>
         <div
           style={{
             background: `lightblue`,
@@ -69,7 +81,7 @@ export default class Template extends React.Component {
         >
           {this.props.children()}
         </div>
-      </div>
+      </LayoutContainer>
     )
   }
 }
