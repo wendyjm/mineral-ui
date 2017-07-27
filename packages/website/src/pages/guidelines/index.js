@@ -3,7 +3,7 @@ import Link from 'gatsby-link'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
 
-export default class GuideIndex extends React.Component {
+export default class GuideNav extends React.Component {
   render () {
     const guideLinks = []
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
@@ -27,9 +27,10 @@ export default class GuideIndex extends React.Component {
           }
           {/* TODO: figure out how to query regular pages */}
           <li>
-            <Link to="/guidelines/color/">
-              Color
-            </Link>
+            <Link to="/guidelines/color/">Color</Link>
+          </li>
+          <li>
+            <Link to="/theming">Theming</Link>
           </li>
         </ul>
       </div>

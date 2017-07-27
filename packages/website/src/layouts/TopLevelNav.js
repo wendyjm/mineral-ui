@@ -24,7 +24,7 @@ export default function TopLevelNav ({currentPath}) {
 
   const menu = {
     '/getting-started/': 'Getting Started',
-    '/guidelines/': 'Guidelines',
+    '/guidelines/approach': 'Guidelines',
     '/components/': 'Components',
     '/theming/': 'Theming',
     '/whats-new/': 'What\'s New',

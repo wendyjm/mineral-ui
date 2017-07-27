@@ -45,18 +45,6 @@ export default class Template extends React.Component {
       content = <ComponentPage currentPath={pathname} />
     } else { // a guideline page.
       content = <GuidelinePage>{this.props.children()}</GuidelinePage>;
-      // content = <div>
-      //   <div
-      //     style={{
-      //       margin: `0 auto`,
-      //       maxWidth: 960,
-      //       padding: `0px 1.0875rem 1.45rem`,
-      //       paddingTop: 0,
-      //     }}
-      //   >
-      //     {this.props.children()}
-      //   </div>
-      // </div>
     }
 
     return (
@@ -70,7 +58,6 @@ export default class Template extends React.Component {
         >
           <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet" />
         </Helmet>
-        <Header currentPath={this.props.location.pathname} />
         {content}
       </LayoutContainer>
     )

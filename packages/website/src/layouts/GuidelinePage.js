@@ -1,21 +1,28 @@
 import React from 'react';
 import {createStyledComponent} from '@mineral-ui/component-utils';
 import SubNav from './SubNav';
+import Header from './Header';
 
-const LayoutContainer = createStyledComponent('div', {
-
+const Container = createStyledComponent('div', {
+  display: 'flex',
+  margin: '0 auto',
+  maxWidth: '90rem',
 })
 
 const Content = createStyledComponent('div', {
-
+  flex: '1 1 auto',
+  backgroundColor: 'lightgrey',
+  padding: '6rem 3.5rem 6rem 10rem'
 })
 
 export default function GuidelinePage ({currentPath, children}) {
   return (
-    <LayoutContainer>
-      <SubNav />
-      GuidelinePage!
-      <Content>{children}</Content>
-    </LayoutContainer>
+    <div>
+      <Header currentPath={this.props.location.pathname} />
+      <Container>
+        <SubNav />
+        <Content>{children}</Content>
+      </Container>
+    </div>
   )
 }
