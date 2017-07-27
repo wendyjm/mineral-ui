@@ -5,8 +5,10 @@ import Helmet from "react-helmet"
 import get from 'lodash/get'
 import {createStyledComponent} from '@mineral-ui/component-utils'
 
-import TopLevelNav from './TopLevelNav'
-import SubNav from  './SubNav'
+import HomePage from './HomePage';
+import GuidelinePage from './GuidelinePage';
+import ComponentPage from './ComponentPage';
+import Header from './Header';
 
 require('prismjs/themes/prism-okaidia.css')
 require('./global.css')
@@ -26,12 +28,36 @@ export default class Template extends React.Component {
 
   render() {
 
-    console.log('layouts', this.props)
+    // console.log('layouts', this.props)
+
+    const {location: {pathname}} = this.props;
 
     // so apparently atm there is only one layout available,=
     // so you have to fork at the pathname and return a different layout
     // there is an open PR to add this functionality
     // https://github.com/gatsbyjs/gatsby/pull/1503
+    //
+
+    let content;
+    if (pathname === '/') {
+      content = <HomePage />;
+    } else if (pathname.match('components')) {
+      content = <ComponentPage currentPath={pathname} />
+    } else { // a guideline page.
+      content = <GuidelinePage>{this.props.children()}</GuidelinePage>;
+      // content = <div>
+      //   <div
+      //     style={{
+      //       margin: `0 auto`,
+      //       maxWidth: 960,
+      //       padding: `0px 1.0875rem 1.45rem`,
+      //       paddingTop: 0,
+      //     }}
+      //   >
+      //     {this.props.children()}
+      //   </div>
+      // </div>
+    }
 
     return (
       <LayoutContainer>
@@ -44,43 +70,8 @@ export default class Template extends React.Component {
         >
           <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet" />
         </Helmet>
-        <div
-          style={{
-            background: `lightblue`,
-            marginBottom: `1.45rem`,
-          }}
-        >
-          <div
-            style={{
-              margin: `0 auto`,
-              maxWidth: 960,
-              padding: `1.45rem 1.0875rem`,
-            }}
-          >
-            <h1 style={{ margin: 0 }}>
-              <Link
-                to="/"
-                style={{
-                  color: "white",
-                  textDecoration: "none",
-                }}
-              >
-                Mineral UI
-              </Link>
-            </h1>
-            <TopLevelNav />
-          </div>
-        </div>
-        <div
-          style={{
-            margin: `0 auto`,
-            maxWidth: 960,
-            padding: `0px 1.0875rem 1.45rem`,
-            paddingTop: 0,
-          }}
-        >
-          {this.props.children()}
-        </div>
+        <Header currentPath={this.props.location.pathname} />
+        {content}
       </LayoutContainer>
     )
   }

@@ -3,8 +3,6 @@ import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
 import get from 'lodash/get'
 
-import SubNav from '../layouts/SubNav'
-
 export default class GuidePageTemplate extends React.Component {
   render () {
 
@@ -14,7 +12,6 @@ export default class GuidePageTemplate extends React.Component {
     return (
       <div>
         <Helmet title={`${guide.frontmatter.title} | ${siteTitle}`} />
-        <SubNav />
         <div dangerouslySetInnerHTML={{ __html: guide.html }} />
       </div>
     )
