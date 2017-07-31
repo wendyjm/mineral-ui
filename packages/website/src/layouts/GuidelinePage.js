@@ -18,7 +18,7 @@ const Content = createStyledComponent('div', {
 export default function GuidelinePage ({currentPath, children}) {
   return (
     <div>
-      <Header currentPath={this.props.location.pathname} />
+      <Header currentPath={currentPath} />
       <Container>
         <SubNav />
         <Content>{children}</Content>
