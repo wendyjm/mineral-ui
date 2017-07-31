@@ -10,7 +10,7 @@ export default function TopLevelNav ({currentPath}) {
     height: 100
   });
 
-  const Link = createStyledComponent(_Link, (props, theme) => {
+  const Link = createStyledComponent(_Link, ({active}, theme) => {
     return {
       marginRight: theme.spacing_single,
       textDecoration: 'none',
@@ -18,7 +18,7 @@ export default function TopLevelNav ({currentPath}) {
       height: '100%',
       paddingTop: '3em',
       color: theme.color_gray_50,
-      borderBottom: `5px solid ${props.active ? theme.color_gray_80 : 'transparent'}`
+      borderBottom: `5px solid ${active ? theme.color_gray_80 : 'transparent'}`
     }
   });
 

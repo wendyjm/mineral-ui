@@ -2,6 +2,7 @@ import React from 'react';
 import {createStyledComponent} from '@mineral-ui/component-utils';
 import SubNav from './SubNav';
 import Header from './Header';
+import Footer from './Footer';
 
 const Container = createStyledComponent('div', {
   display: 'flex',
@@ -23,6 +24,7 @@ export default function GuidelinePage ({currentPath, children}) {
         <SubNav />
         <Content>{children}</Content>
       </Container>
+      <Footer />
     </div>
   )
 }

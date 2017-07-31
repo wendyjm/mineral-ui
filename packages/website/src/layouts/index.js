@@ -44,7 +44,7 @@ export default class Template extends React.Component {
     } else if (pathname.match('components')) {
       content = <ComponentPage currentPath={pathname} />
     } else { // a guideline page.
-      content = <GuidelinePage>{this.props.children()}</GuidelinePage>;
+      content = <GuidelinePage currentPath={pathname}>{this.props.children()}</GuidelinePage>;
     }
 
     return (
