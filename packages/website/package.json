@@ -1,23 +1,25 @@
 {
   "name": "@mineral-ui/website",
-  "version": "0.0.0",
-  "private": true,
   "description": "the website",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "gatsby develop"
+  "version": "0.0.0",
+  "author": "CA Technologies",
+  "dependencies": {
+    "gatsby": "^1.0.1",
+    "gatsby-link": "^1.0.1",
+    "gatsby-plugin-react-helmet": "^1.0.1"
   },
   "keywords": [
-    "react",
-    "node",
-    "design",
-    "system",
-    "component",
-    "library"
+    "gatsby"
   ],
-  "author": "ca technologies",
-  "license": "Apache-2.0",
+  "license": "MIT",
+  "main": "n/a",
+  "scripts": {
+    "build": "./node_modules/.bin/gatsby build",
+    "serve": "npm run build && ./node_modules/.bin/gatsby serve",
+    "start": "./node_modules/.bin/gatsby develop",
+    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "devDependencies": {
     "@mineral-ui/button": "^2.0.0",
     "@mineral-ui/component-utils": "^1.0.0",
@@ -37,6 +39,7 @@
     "gatsby-remark-smartypants": "^1.0.0",
     "gatsby-source-filesystem": "^1.0.0",
     "gatsby-transformer-remark": "^1.1.0",
-    "gatsby-transformer-sharp": "^1.0.0"
+    "gatsby-transformer-sharp": "^1.0.0",
+    "prettier": "^1.5.2"
   }
 }

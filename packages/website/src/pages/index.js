@@ -1,26 +1,13 @@
-import React from "react"
-import Link from "gatsby-link"
-import Helmet from "react-helmet"
+import React from 'react'
+import Link from 'gatsby-link'
 
-export default function Index ({data}) {
-  const {edges: pages} = data.allSitePage
-  return (
-    <div>
-      <h1>Mineral UI</h1>
-      <p>This is the home page</p>
-    </div>
-  )
-}
+const IndexPage = () => (
+  <div>
+    <h1>Hi people</h1>
+    <p>Welcome to your new Gatsby site.</p>
+    <p>Now go build something great.</p>
+    <Link to="/page-2/">Go to page 2</Link>
+  </div>
+)
 
-export const pageQuery = graphql`
-  query IndexQuery {
-    allSitePage {
-      edges {
-        node {
-          id
-          path
-        }
-      }
-    }
-  }
-`
+export default IndexPage
