@@ -15,32 +15,7 @@
  */
 
 /* @flow */
-
-import React from 'react';
-import Figure from '../Figure';
-import FigCaption from '../FigCaption';
-import FigContainer from '../FigContainer';
-import CategoryHeader from '../CategoryHeader';
-
 /* eslint-disable prettier/prettier */
 {{#components}}
-import {{componentName}} from '../../../../../../Icon/{{componentName}}';
+export { default as {{componentName}} } from './{{componentName}}';
 {{/components}}
-
-export default function {{componentName}}() {
-  return (
-    <div>
-      <CategoryHeader>{{componentCategory}}</CategoryHeader>
-      <FigContainer>
-      {{#components}}
-        <Figure tabIndex={0}>
-          <{{componentName}} />
-          <FigCaption>
-            {{componentName}}
-          </FigCaption>
-        </Figure>
-      {{/components}}
-      </FigContainer>
-    </div>
-  );
-}

@@ -18,7 +18,6 @@
   "scripts": {
     "build": "npm run clean && ./scripts/build.js",
     "build:analyze": "ANALYZE=true npm run start",
-    "build:icons": "./scripts/build-icons.js",
     "clean": "rm -rf dist",
     "commit": "git-cz",
     "commitmsg": "validate-commit-msg",
@@ -32,7 +31,6 @@
     "jest": "jest",
     "lint": "npm run eslint",
     "pack-ls": "cd dist && tar -tvf $(npm pack) && rm *.tgz",
-    "postinstall": "npm run build:icons",
     "release": "npm run build && npm test && ./scripts/release.js",
     "release:dist": "./scripts/release.js",
     "start": "NODE_ENV=development webpack-dev-server --progress",
@@ -90,7 +88,6 @@
     "lodash.camelcase": "4.3.0",
     "lodash.flatten": "4.4.0",
     "lodash.upperfirst": "4.3.1",
-    "material-design-icons": "3.0.1",
     "mustache": "2.3.0",
     "netlify-cli": "1.2.2",
     "polished": "1.4.1",

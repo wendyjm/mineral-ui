@@ -15,13 +15,17 @@
  */
 
 /* @flow */
-import IconSentimentSatisfied from '../../../../../../packages/mineral-ui-icons/src/IconSentimentSatisfied';
+import { createStyledComponent } from '../../../../src/utils';
 
-export default {
-  id: 'title',
-  title: 'Title',
-  description:
-    'Standalone icons need a title as opposed to decorative icons (those that repeat the information conveyed by text or do not add significant value).',
-  scope: { IconSentimentSatisfied },
-  source: `<IconSentimentSatisfied title="smiley-face" />`
-};
+export default createStyledComponent(
+  'div',
+  ({ theme }) => ({
+    display: 'flex',
+    flexWrap: 'wrap',
+    marginLeft: `-${theme.spacing_half}`
+  }),
+  {
+    displayName: 'FigContainer',
+    includeStyleReset: true
+  }
+);

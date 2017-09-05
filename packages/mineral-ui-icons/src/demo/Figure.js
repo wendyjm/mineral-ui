@@ -15,7 +15,7 @@
  */
 
 /* @flow */
-import { createStyledComponent } from '../../../../../utils';
+import { createStyledComponent } from '../../../../src/utils';
 
 export default createStyledComponent(
   'figure',

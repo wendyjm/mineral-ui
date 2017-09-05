@@ -16,7 +16,7 @@
 
 /* @flow */
 import Button from '../../../../../Button';
-import IconBackspace from '../../../../../Icon/IconBackspace';
+import IconBackspace from '../../../../../../packages/mineral-ui-icons/src/IconBackspace';
 
 export default {
   id: 'rtl',

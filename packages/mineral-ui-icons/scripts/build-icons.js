@@ -16,7 +16,7 @@ const { VERBOSE } = process.env;
 
 const SVG_DIR = path.join(__dirname, '../node_modules/material-design-icons');
 const SVG_GLOB = '**/production/*_24px.svg';
-const ICON_SRC_DIR = path.join(__dirname, '../src/Icon');
+const ICON_SRC_DIR = path.join(__dirname, '../src');
 const ICON_COMPONENTS_DIR = ICON_SRC_DIR;
 const ICON_COMPONENT_TEMPLATE_PATH = path.join(
   ICON_SRC_DIR,
@@ -278,7 +278,7 @@ function generateCategory(template, categoryName, components) {
   const categoryFileName = `${componentName}.js`;
   const categoryFilePath = path.join(
     __dirname,
-    '../src/website/app/demos/Icon/components/categories',
+    '../src/demo/categories',
     categoryFileName
   );
 
@@ -298,7 +298,7 @@ function generateCategoryIndex(categories) {
     });
     const categoryIndexFilePath = path.join(
       __dirname,
-      '../src/website/app/demos/Icon/components/CategoryIndex.js'
+      '../src/demo/index.js'
     );
 
     // Write category index file

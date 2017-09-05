@@ -17,27 +17,30 @@
 /* @flow */
 
 import React from 'react';
-import Icon from './Icon';
-
-type Props = {
-  size?: string | 'small' | 'medium' | 'large',
-  color?: string,
-  rtl?: boolean,
-  title?: string
-};
+import Figure from '../Figure';
+import FigCaption from '../FigCaption';
+import FigContainer from '../FigContainer';
+import CategoryHeader from '../CategoryHeader';
 
 /* eslint-disable prettier/prettier */
-export default function {{componentName}}(props: Props) {
-  const iconProps = {
-    rtl: {{rtl}},
-    ...props
-  };
+{{#components}}
+import {{componentName}} from '../../{{componentName}}';
+{{/components}}
 
+export default function {{componentName}}() {
   return (
-    <Icon {...iconProps}>
-      <g>
-        {{{svgChildren}}}
-      </g>
-    </Icon>
+    <div>
+      <CategoryHeader>{{componentCategory}}</CategoryHeader>
+      <FigContainer>
+      {{#components}}
+        <Figure tabIndex={0}>
+          <{{componentName}} />
+          <FigCaption>
+            {{componentName}}
+          </FigCaption>
+        </Figure>
+      {{/components}}
+      </FigContainer>
+    </div>
   );
 }

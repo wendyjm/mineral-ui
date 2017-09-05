@@ -15,24 +15,29 @@
  */
 
 /* @flow */
-import { createStyledComponent } from '../../../../../utils';
 
-export default createStyledComponent(
-  'h5',
-  ({ theme }) => ({
-    borderTop: `1px solid ${theme.color_gray}`,
-    paddingTop: theme.spacing_oneAndAHalf,
-    fontSize: theme.font_size_b,
-    textTransform: 'capitalize',
-    margin: `${theme.spacing_oneAndAHalf} 0 ${theme.spacing_single}`,
-    '&:first-of-type': {
-      borderTop: 'none',
-      paddingTop: 0,
-      marginTop: theme.spacing_single
-    }
-  }),
-  {
-    displayName: 'CategoryHeader',
-    includeStyleReset: true
-  }
-);
+import React from 'react';
+import { Icon } from 'mineral-ui'; // TODO: verify tree shaking.  Need module mapper?
+
+type Props = {
+  size?: string | 'small' | 'medium' | 'large',
+  color?: string,
+  rtl?: boolean,
+  title?: string
+};
+
+/* eslint-disable prettier/prettier */
+export default function {{componentName}}(props: Props) {
+  const iconProps = {
+    rtl: {{rtl}},
+    ...props
+  };
+
+  return (
+    <Icon {...iconProps}>
+      <g>
+        {{{svgChildren}}}
+      </g>
+    </Icon>
+  );
+}

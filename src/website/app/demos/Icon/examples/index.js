@@ -21,6 +21,5 @@ import custom from './custom';
 import rtl from './rtl';
 import sizes from './sizes';
 import title from './title';
-import categories from './categories';
 
-export default [icon, color, sizes, title, rtl, custom, categories];
+export default [icon, color, sizes, title, rtl, custom];

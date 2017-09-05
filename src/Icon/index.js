@@ -15,16 +15,4 @@
  */
 
 /* @flow */
-import { createStyledComponent } from '../../../../../utils';
-
-export default createStyledComponent(
-  'figcaption',
-  ({ theme }) => ({
-    fontSize: theme.fontSize_mouse,
-    marginLeft: theme.spacing_half
-  }),
-  {
-    displayName: 'FigCaption',
-    includeStyleReset: true
-  }
-);
+export { default } from './Icon';

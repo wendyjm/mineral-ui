@@ -16,7 +16,7 @@
 
 /* @flow */
 import ThemeProvider from '../../../../../ThemeProvider';
-import IconHelp from '../../../../../Icon/IconHelp';
+import IconHelp from '../../../../../../packages/mineral-ui-icons/src/IconHelp';
 
 export default {
   id: 'rtl',

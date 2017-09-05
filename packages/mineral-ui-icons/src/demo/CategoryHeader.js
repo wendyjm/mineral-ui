@@ -15,17 +15,24 @@
  */
 
 /* @flow */
-import { createStyledComponent } from '../../../../../utils';
+import { createStyledComponent } from '../../../../src/utils';
 
 export default createStyledComponent(
-  'div',
+  'h5',
   ({ theme }) => ({
-    display: 'flex',
-    flexWrap: 'wrap',
-    marginLeft: `-${theme.spacing_half}`
+    borderTop: `1px solid ${theme.color_gray}`,
+    paddingTop: theme.spacing_oneAndAHalf,
+    fontSize: theme.font_size_b,
+    textTransform: 'capitalize',
+    margin: `${theme.spacing_oneAndAHalf} 0 ${theme.spacing_single}`,
+    '&:first-of-type': {
+      borderTop: 'none',
+      paddingTop: 0,
+      marginTop: theme.spacing_single
+    }
   }),
   {
-    displayName: 'FigContainer',
+    displayName: 'CategoryHeader',
     includeStyleReset: true
   }
 );

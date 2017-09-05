@@ -17,7 +17,7 @@
 /* @flow */
 import { createStyledComponent } from '../../../../../utils';
 import Button from '../../../../../Button';
-import IconCloud from '../../../../../Icon/IconCloud';
+import IconCloud from '../../../../../../packages/mineral-ui-icons/src/IconCloud';
 
 const DemoLayout = createStyledComponent('div', {
   '& > button': {

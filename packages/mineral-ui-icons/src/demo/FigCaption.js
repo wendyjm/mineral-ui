@@ -15,8 +15,16 @@
  */
 
 /* @flow */
-/* eslint-disable prettier/prettier */
-export { default } from './Icon';
-{{#components}}
-export { default as {{componentName}} } from './{{componentName}}';
-{{/components}}
+import { createStyledComponent } from '../../../../src/utils';
+
+export default createStyledComponent(
+  'figcaption',
+  ({ theme }) => ({
+    fontSize: theme.fontSize_mouse,
+    marginLeft: theme.spacing_half
+  }),
+  {
+    displayName: 'FigCaption',
+    includeStyleReset: true
+  }
+);

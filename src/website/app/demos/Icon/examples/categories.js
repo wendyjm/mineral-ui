@@ -15,7 +15,7 @@
  */
 
 /* @flow */
-import CategoryIndex from '../components/CategoryIndex';
+import CategoryIndex from '../../../../../../packages/mineral-ui-icons/src/demo';
 
 export default {
   id: 'categories',
