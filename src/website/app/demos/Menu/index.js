@@ -16,7 +16,8 @@
 
 /* @flow */
 import { componentTheme as menuDividerComponentTheme } from '../../../../Menu/MenuDivider';
-import { componentTheme as menuGroupComponentTheme } from '../../../../Menu/MenuGroupTitle';
+import { componentTheme as menuGroupComponentTheme } from '../../../../Menu/MenuGroup';
+import { componentTheme as menuGroupTitleComponentTheme } from '../../../../Menu/MenuGroupTitle';
 import { componentTheme as menuItemComponentTheme } from '../../../../Menu/MenuItem';
 import menuExamples from './examples/menu';
 import menuDividerExamples from './examples/menu-divider';
@@ -44,7 +45,7 @@ export default [
     title: 'MenuDivider'
   },
   {
-    componentTheme: menuGroupComponentTheme,
+    componentTheme: [menuGroupComponentTheme, menuGroupTitleComponentTheme],
     doc: menuGroupDoc,
     examples: menuGroupExamples,
     slug: 'menu-group',

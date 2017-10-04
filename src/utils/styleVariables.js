@@ -18,6 +18,13 @@
 import fontSize_base from './font-size-base';
 import pxToEm from './pxToEm';
 
+const spacing_quarter = pxToEm(2);
+const spacing_half = pxToEm(4);
+const spacing_single = pxToEm(8);
+const spacing_double = pxToEm(16);
+const spacing_triple = pxToEm(24);
+const spacing_quad = pxToEm(32);
+
 export default {
   borderRadius_1: pxToEm(3),
 
@@ -58,13 +65,25 @@ export default {
   size_large: pxToEm(40),
   size_jumbo: pxToEm(52),
 
-  spacing_quarter: pxToEm(2),
-  spacing_half: pxToEm(4),
-  spacing_single: pxToEm(8),
-  spacing_oneAndAHalf: pxToEm(12),
-  spacing_double: pxToEm(16),
-  spacing_triple: pxToEm(24),
-  spacing_quad: pxToEm(32),
+  space_inline_xxs: spacing_quarter,
+  space_inline_xs: spacing_half,
+  space_inline_sm: spacing_single,
+  space_inline_md: spacing_double,
+  space_inline_lg: spacing_triple,
+  space_inline_xl: spacing_quad,
+  space_inline_xxl: pxToEm(64),
+
+  space_inset_sm: spacing_single,
+  space_inset_md: spacing_double,
+  space_inset_lg: spacing_triple,
+
+  space_stack_xxs: spacing_quarter,
+  space_stack_xs: spacing_half,
+  space_stack_sm: spacing_single,
+  space_stack_md: spacing_double,
+  space_stack_lg: spacing_triple,
+  space_stack_xl: spacing_quad,
+  space_stack_xxl: pxToEm(64),
 
   zIndex_100: 100,
   zIndex_200: 200,
