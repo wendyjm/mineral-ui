@@ -19,12 +19,11 @@ import GettingStarted from './GettingStarted';
 import Theming from './Theming';
 import Color from './Color';
 import Typography from './Typography';
+import ThemeDemo from './ThemeDemo';
 
 type Page = {
   component: React$ComponentType<*>,
-  id?: string,
   path?: string,
-  sections?: Array<Object>,
   title: string
 };
 
@@ -50,6 +49,11 @@ const pages: Pages = [
     component: Theming,
     path: '/theming',
     title: 'Theming'
+  },
+  {
+    component: ThemeDemo,
+    path: '/theme-demo',
+    title: 'Theme Demo'
   }
 ];
 
