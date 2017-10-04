@@ -30,6 +30,7 @@ type Props = {
   children?: any,
   className?: string,
   demos: Object | Array<Object>,
+  history: Object,
   location?: any
 };
 
@@ -70,6 +71,21 @@ const Nav = createStyledComponent(_Nav, styles.nav);
 const Main = createStyledComponent('main', styles.main);
 
 class App extends Component<Props> {
+  constructor(props) {
+    super(props);
+    props.history.listen((location, action) => {
+      // our router does a redirect to add a trailing slash to the pathname
+      // we only want to track one pageview per navigation
+      if (action === 'PUSH') {
+        try {
+          window.ga('send', 'pageview', `/virtual${location.pathname}`);
+        } catch (e) {
+          // ga is not be defined as the page is loading.
+        }
+      }
+    });
+  }
+
   props: Props;
 
   componentDidUpdate(prevProps) {
