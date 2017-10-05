@@ -15,6 +15,7 @@
  */
 
 /* @flow */
+// import deprecate from 'deprecate';
 import fontSize_base from './font-size-base';
 import pxToEm from './pxToEm';
 
@@ -24,6 +25,43 @@ const spacing_single = pxToEm(8);
 const spacing_double = pxToEm(16);
 const spacing_triple = pxToEm(24);
 const spacing_quad = pxToEm(32);
+
+const hits = {};
+const deprecate = (key: string, message: string) => {
+  if (hits[key]) return;
+  hits[key] = true;
+  console.warn(`WARNING\n\n${message}\n\n`);
+};
+
+const deprecateSpacingVariable = variable => {
+  const keyMap = {
+    spacing_quarter,
+    spacing_half,
+    spacing_single,
+    spacing_double,
+    spacing_triple,
+    spacing_quad
+  };
+  const sizeMap = {
+    spacing_quarter: 'xxs',
+    spacing_half: 'xs',
+    spacing_single: 'sm',
+    spacing_double: 'md',
+    spacing_triple: 'lg',
+    spacing_quad: 'xl'
+  };
+
+  // prettier-ignore
+  deprecate(
+    variable,
+    `The theme variable \`${variable}\` is deprecated. Please use either
+\`space_inline_${sizeMap[variable]}\`(for horizontal space),
+\`space_inset_${sizeMap[variable]}\` (for container padding), or
+\`space_stack_${sizeMap[variable]}\` (for vertical space).`
+  );
+
+  return keyMap[variable];
+};
 
 export default {
   borderRadius_1: pxToEm(3),
@@ -64,6 +102,33 @@ export default {
   size_medium: pxToEm(32),
   size_large: pxToEm(40),
   size_jumbo: pxToEm(52),
+
+  // spacing_quarter: deprecateSpacingVariable('spacing_quarter'),
+  // spacing_half: deprecateSpacingVariable('spacing_half'),
+  // spacing_single: deprecateSpacingVariable('spacing_single'),
+  // spacing_double: deprecateSpacingVariable('spacing_double'),
+  // spacing_triple: deprecateSpacingVariable('spacing_triple'),
+  // spacing_quad: deprecateSpacingVariable('spacing_quad'),
+
+  get spacing_quarter() {
+    return deprecateSpacingVariable('spacing_quarter');
+  },
+  get spacing_half() {
+    return deprecateSpacingVariable('spacing_half');
+  },
+  get spacing_single() {
+    return deprecateSpacingVariable('spacing_single');
+  },
+  get spacing_double() {
+    debugger;
+    return deprecateSpacingVariable('spacing_double');
+  },
+  get spacing_triple() {
+    return deprecateSpacingVariable('spacing_triple');
+  },
+  get spacing_quad() {
+    return deprecateSpacingVariable('spacing_quad');
+  },
 
   space_inline_xxs: spacing_quarter,
   space_inline_xs: spacing_half,
