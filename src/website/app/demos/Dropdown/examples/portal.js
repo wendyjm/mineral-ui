@@ -16,16 +16,21 @@
 
 /* @flow */
 import Button from '../../../../../Button';
+import DemoContent from '../../Popover/components/DemoContent';
+import ScrollParent from '../../Popover/components/ScrollBox';
 import Dropdown from '../../../../../Dropdown';
 import data from '../../Menu/components/menuData';
 
 export default {
-  id: 'basic',
-  title: 'Dropdown',
-  description: 'Basic dropdown.',
-  scope: { Button, data, Dropdown },
+  id: 'portal',
+  title: 'Portal',
+  description:
+    'Use a portal to render the Dropdown to the body of the page rather than as a sibling of the trigger.  This can be useful to visually "break out" of a bounding container that has an `overflow: hidden` or `z-index` style.',
+  scope: { Button, data, DemoContent, ScrollParent, Dropdown },
   source: `
-    <Dropdown data={data}>
-      <Button>Menu</Button>
-    </Dropdown>`
+    <ScrollParent>
+      <Dropdown data={data} usePortal>
+        <Button>Menu</Button>
+      </Dropdown>
+    </ScrollParent>`
 };

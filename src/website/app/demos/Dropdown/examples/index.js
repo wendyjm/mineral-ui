@@ -21,6 +21,7 @@ import disabled from './disabled';
 import dropdown from './dropdown';
 import onOpenClose from './onOpenClose';
 import placement from './placement';
+import portal from './portal';
 import scrolling from './scrolling';
 import wide from './wide';
 
@@ -30,6 +31,7 @@ export default [
   wide,
   placement,
   scrolling,
+  portal,
   onOpenClose,
   disabled,
   controlled

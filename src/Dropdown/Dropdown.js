@@ -62,6 +62,8 @@ type Props = {
     | 'top-start',
   /** Focus trigger after selecting an item */
   restoreFocus?: boolean,
+  /** Use a Portal to render the Dropdown menu to the body rather than as a sibling to the trigger */
+  usePortal?: boolean,
   /** Display a wider Dropdown menu */
   wide?: boolean
 };

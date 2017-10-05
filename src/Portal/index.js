@@ -15,26 +15,4 @@
  */
 
 /* @flow */
-import scrolling from './scrolling';
-import controlled from './controlled';
-import disabled from './disabled';
-import focus from './focus';
-import onOpenClose from './onOpenClose';
-import overflow from './overflow';
-import placement from './placement';
-import popover from './popover';
-import portal from './portal';
-import title from './title';
-
-export default [
-  popover,
-  title,
-  placement,
-  overflow,
-  scrolling,
-  portal,
-  onOpenClose,
-  focus,
-  disabled,
-  controlled
-];
+export { default } from './Portal';
